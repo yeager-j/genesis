@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { FirebaseAppProvider } from 'reactfire';
+import 'firebase/firestore';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDT7IMCqKAwLyLGgXaCrp_DxXdvW-6tZG8",
+    authDomain: "genesis-17b06.firebaseapp.com",
+    databaseURL: 'https://genesis-17b06.firebaseio.com',
+    projectId: "genesis-17b06",
+    storageBucket: "genesis-17b06.appspot.com",
+    messagingSenderId: "457234132629",
+    appId: "1:457234132629:web:1c6a717139b742de14759c"
+};
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+        <App />
+    </FirebaseAppProvider>,
   document.getElementById('root')
 );
 
